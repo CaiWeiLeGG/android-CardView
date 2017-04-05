@@ -34,4 +34,8 @@ public class CardViewActivity extends Activity {
                     .commit();
         }
     }
+
+    public void testFunc() {
+        
+    }
 }
