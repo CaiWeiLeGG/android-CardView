@@ -27,6 +27,10 @@ import android.widget.SeekBar;
 
 /**
  * Fragment that demonstrates how to use CardView.
+ * CardView带3D效果
+ * 切换手机屏幕，数据保存恢复，重点关注函数onActivityCreated
+ *                                         onSaveInstanceState
+ *  如果切屏中带有对话框 那么建议使用FragmentDialog
  */
 public class CardViewFragment extends Fragment {
 
@@ -56,6 +60,7 @@ public class CardViewFragment extends Fragment {
      */
     public static CardViewFragment newInstance() {
         CardViewFragment fragment = new CardViewFragment();
+        //设置为ture 当转屏时  onCreate不会再被创建，也就是说fragment只有一个实例
         fragment.setRetainInstance(true);
         return fragment;
     }
@@ -64,14 +69,32 @@ public class CardViewFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
+    }
+
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if (savedInstanceState != null)  {
+            String value = (String) savedInstanceState.get("key");
+            Log.d(TAG, "onActivityCreated: "+value);
+        }else {
+            Log.d(TAG, "onActivityCreated: ");
+        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Log.d(TAG, "onCreateView: ");
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_card_view, container, false);
     }
@@ -79,6 +102,8 @@ public class CardViewFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Log.d(TAG, "onViewCreated: ");
+        
         mCardView = (CardView) view.findViewById(R.id.cardview);
         mRadiusSeekBar = (SeekBar) view.findViewById(R.id.cardview_radius_seekbar);
         mRadiusSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -115,6 +140,13 @@ public class CardViewFragment extends Fragment {
                 //Do nothing
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("key","value");
+        Log.d(TAG, "onSaveInstanceState: ");
     }
 }
 

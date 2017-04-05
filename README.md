@@ -1,3 +1,10 @@
+-1这个例子中有cardView的基本使用
+-2当手机横竖屏切换时，Activity和Fragment，DialogFragmet这些类的生命周期和数据的保存和恢复
+参考blog:http://www.jianshu.com/p/0b5403c42fdb
+
+
+
+
 
 Android CardView Sample Sample
 ===================================

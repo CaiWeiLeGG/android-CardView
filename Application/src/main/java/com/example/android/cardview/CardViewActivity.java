@@ -16,13 +16,19 @@
 
 package com.example.android.cardview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 /**
  * Launcher Activity for the CardView sample app.
+ * Activity生命周期的数据恢复 关注重点方法onCreate
+ *                                         onSaveInstanceState
+ *                                          onRestoreInstanceState
  */
-public class CardViewActivity extends Activity {
+public class CardViewActivity extends FragmentActivity {
+
+    private static final String TAG = "cai";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +39,48 @@ public class CardViewActivity extends Activity {
                     .add(R.id.container, CardViewFragment.newInstance())
                     .commit();
         }
+
+        if (savedInstanceState !=null) {
+            String value = savedInstanceState.getString("key");
+            Log.d(TAG, "onCreate: "+value);
+        }
+
+
+//        Log.d(TAG, "onCreate: ");
     }
 
-    public void testFunc() {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.d(TAG, "onDestroy: ");
+    }
+
+    /**
+     * 在onDestroy之前调用；用于横竖屏的切换调用
+     * or 当app进入后台时调用(按home键)
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("key","value");
+        Log.d(TAG, "onSaveInstanceState: ");
+    }
+
+    /**
+     * 在onCreate后面调用
+     * @param savedInstanceState  这个bundlle和onCreate里的Bundle里的是一样的
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         
+        super.onRestoreInstanceState(savedInstanceState);
+//        Log.d(TAG, "onRestoreInstanceState: ");
+
+        if (savedInstanceState != null) {
+            String value = savedInstanceState.getString("key");
+            Log.d(TAG, "onRestoreInstanceState: "+value);
+        }
     }
 }

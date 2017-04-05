@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="21"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="6008904350352"
+    token="842003693099167676"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="1309" />
+    <task
+        name="instant-run-dex"
+        duration="3527" />
+    <task
+        name="instant-run-transform"
+        duration="157" />
+    <task
+        name="verifier"
+        duration="30" />
+
+    <artifact
+        location="F:\Github\android-CardView\Application\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        timestamp="2152585629685"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="F:\Github\android-CardView\Application\build\outputs\apk\Application-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="5154328397521"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="F:\Github\android-CardView\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="128828119213140"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="F:\Github\android-CardView\Application\build\outputs\apk\Application-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
