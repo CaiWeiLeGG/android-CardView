@@ -23,8 +23,8 @@ import android.util.Log;
 /**
  * Launcher Activity for the CardView sample app.
  * Activity生命周期的数据恢复 关注重点方法onCreate
- *                                         onSaveInstanceState
- *                                          onRestoreInstanceState
+ * onSaveInstanceState
+ * onRestoreInstanceState
  */
 public class CardViewActivity extends FragmentActivity {
 
@@ -38,15 +38,22 @@ public class CardViewActivity extends FragmentActivity {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, CardViewFragment.newInstance())
                     .commit();
+
+            testViewDialogFragment();
         }
 
-        if (savedInstanceState !=null) {
+        if (savedInstanceState != null) {
             String value = savedInstanceState.getString("key");
-            Log.d(TAG, "onCreate: "+value);
+            Log.d(TAG, "onCreate: " + value);
         }
-
-
 //        Log.d(TAG, "onCreate: ");
+    }
+
+
+    //展示DialogFragment特性  转屏保存
+    void testViewDialogFragment() {
+        MyDialogFragment myDialogFragment = new MyDialogFragment();
+        myDialogFragment.show(getSupportFragmentManager(),"TAG");
     }
 
     @Override
@@ -59,28 +66,30 @@ public class CardViewActivity extends FragmentActivity {
     /**
      * 在onDestroy之前调用；用于横竖屏的切换调用
      * or 当app进入后台时调用(按home键)
+     *
      * @param outState
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("key","value");
+        outState.putString("key", "value");
         Log.d(TAG, "onSaveInstanceState: ");
     }
 
     /**
      * 在onCreate后面调用
-     * @param savedInstanceState  这个bundlle和onCreate里的Bundle里的是一样的
+     *
+     * @param savedInstanceState 这个bundlle和onCreate里的Bundle里的是一样的
      */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        
+
         super.onRestoreInstanceState(savedInstanceState);
 //        Log.d(TAG, "onRestoreInstanceState: ");
 
         if (savedInstanceState != null) {
             String value = savedInstanceState.getString("key");
-            Log.d(TAG, "onRestoreInstanceState: "+value);
+            Log.d(TAG, "onRestoreInstanceState: " + value);
         }
     }
 }

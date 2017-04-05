@@ -139,17 +139,23 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int tile=0x7f020001;
+        public static final int radio_corner=0x7f020001;
+        public static final int tile=0x7f020002;
     }
     public static final class id {
+        public static final int btn_close=0x7f080007;
         public static final int cardview=0x7f080001;
         public static final int cardview_elevation_seekbar=0x7f080003;
         public static final int cardview_radius_seekbar=0x7f080002;
         public static final int container=0x7f080000;
+        public static final int id_txt_password=0x7f080006;
+        public static final int id_txt_username=0x7f080005;
+        public static final int ll_root=0x7f080004;
     }
     public static final class layout {
         public static final int activity_card_view=0x7f030000;
         public static final int fragment_card_view=0x7f030001;
+        public static final int my_dia_frg=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f070000;

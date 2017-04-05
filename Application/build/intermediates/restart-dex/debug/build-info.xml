@@ -5,40 +5,33 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="6008904350352"
+    timestamp="12856137906124"
     token="842003693099167676"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1309" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="3527" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="157" />
+        duration="0" />
     <task
         name="verifier"
-        duration="30" />
+        duration="0" />
 
     <artifact
-        location="F:\Github\android-CardView\Application\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="F:\Github\android-CardView\Application\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
-        timestamp="2152585629685"
+        timestamp="12722407580920"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="F:\Github\android-CardView\Application\build\outputs\apk\Application-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="5154328397521"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="F:\Github\android-CardView\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
     </build>
     <build
         timestamp="128828119213140"

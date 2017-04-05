@@ -4,6 +4,10 @@
         "source": "F:\\Github\\android-CardView\\Application\\src\\main\\res\\layout\\activity_card_view.xml"
     },
     {
+        "merged": "F:\\Github\\android-CardView\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\my_dia_frg.xml",
+        "source": "F:\\Github\\android-CardView\\Application\\src\\main\\res\\layout\\my_dia_frg.xml"
+    },
+    {
         "merged": "F:\\Github\\android-CardView\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_card_view.xml",
         "source": "F:\\Github\\android-CardView\\Application\\src\\main\\res\\layout\\fragment_card_view.xml"
     }

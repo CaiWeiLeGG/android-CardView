@@ -1,4 +1,4 @@
-#Wed Apr 05 11:11:37 CST 2017
+#Wed Apr 05 21:26:10 CST 2017
 base.0=F\:\\Github\\android-CardView\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_6f098df2803a342413c9400f37f1739fc2315a34
 renamed.1=classes.dex
 renamed.0=classes2.dex
